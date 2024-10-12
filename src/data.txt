@@ -1,0 +1,31 @@
+John Doe
+32
+New York
+
+Jane Smith
+28
+Los Angeles
+
+Alice Brown
+45
+Chicago
+
+Michael Johnson
+40
+Houston
+
+Emily Davis
+35
+Phoenix
+
+Robert Wilson
+50
+Philadelphia
+
+Linda Martinez
+38
+San Antonio
+
+David Anderson
+29
+Dallas
