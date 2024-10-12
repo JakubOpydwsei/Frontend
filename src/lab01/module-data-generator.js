@@ -34,8 +34,8 @@ fs.readFile('src/data.txt','utf8',(err,data) => {
   // for (const data in groupedData) {
   //   content.push(groupedData[~~((Math.random() * groupedData.length) / 1)]);
   // }
-  console.log(groupedData);
-  console.log(content);
+  //console.log(groupedData);
+  //console.log(content);
 
 
 
