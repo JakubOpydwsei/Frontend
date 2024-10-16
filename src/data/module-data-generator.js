@@ -10,7 +10,7 @@ function shuffle(array) {
 
 
 
-fs.readFile('src/data.txt','utf8',(err,data) => {
+fs.readFile('src/data/data.txt','utf8',(err,data) => {
   if (err) {
     console.error(err);
     return;
@@ -39,7 +39,7 @@ fs.readFile('src/data.txt','utf8',(err,data) => {
 
 
 
-  fs.writeFile('src/lab01/module-data.js', "export const data = " + JSON.stringify(content, null, 2), (err) => {
+  fs.writeFile('src/data/module-data.js', "export const data = " + JSON.stringify(content, null, 2), (err) => {
     if (err) {
       console.error(err);
       return;

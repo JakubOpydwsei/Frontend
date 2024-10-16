@@ -1,47 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import PersonProfile from './lab01/PersonProfile'
-import {data} from './lab01/module-data'
+import RootLayout from './layouts/RootLayout.jsx'
+import { Route, Routes } from 'react-router-dom';
+import Home from './components/Home.jsx';
+import Lab1 from './components/Lab1.jsx';
+import Lab2 from './components/Lab2.jsx';
+import NotFound from './components/NotFound.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const menuItems = [
+    {id: 1, label: "Home"},
+    {id: 2, label: "Laboratorium 1"}, 
+    {id: 3, label: "Laboratorium 2"}
+];
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button className='btn btn-primary' onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <article>
-        <h1 className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </h1>
-      </article>
+      
+      
 
+      <RootLayout items={menuItems}>
+          <Routes>
+              <Route path="/home" element={<Home></Home>}></Route>
+              <Route path="/lab1" element={<Lab1></Lab1>}></Route>
+              <Route path="/lab2" element={<Lab2></Lab2>}></Route>
+              <Route path="/*" element={<NotFound></NotFound>}></Route>
+          </Routes>
+          
+          {/* <SimpleLayout>
+              <p>content</p>
+          </SimpleLayout> */}
 
-      <div className="app">
-      <h1>People List:</h1>
-      <div className="person-list">
-        {data.map((person) => (
-          <PersonProfile key={person.id} person={person} />
-        ))}
-      </div>
-    </div>
+      </RootLayout>
+        
+
+      
     </>
   )
 }
