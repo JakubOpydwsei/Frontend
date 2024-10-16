@@ -1,5 +1,5 @@
 //import PersonProfile from './components/PersonProfile.jsx'
-import {data} from '../data/module-data.js'
+import {data} from '../lab01/module-data.js'
 import PersonProfile from '../components/PersonProfile.jsx'
 
 function Lab1 () {

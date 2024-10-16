@@ -1,10 +1,11 @@
 import NavBarMenu from "./NavBarMenu";
 import Footer from "./Footer";
 
-function RootLayout({ children }) {
+const RootLayout = ({ children , items}) => {
   return (
+    
     <>
-      <NavBarMenu></NavBarMenu>
+      <NavBarMenu items={items}></NavBarMenu>
 
       <div>{children}</div>
 

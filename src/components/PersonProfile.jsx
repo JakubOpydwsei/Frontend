@@ -3,7 +3,7 @@
 const PersonProfile = ({ person }) => {
   return (
     <div className="person-card">
-      <h3>Name: {person.name}</h3>
+      <h5>Name: {person.name}</h5>
       <p>Age: {person.age}</p>
       <p>City: {person.city}</p>
     </div>
