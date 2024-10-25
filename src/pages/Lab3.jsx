@@ -19,8 +19,10 @@ function Lab3() {
             <PersonProfile key={person.id} person={person} />
             <button onClick={() => editPerson(personEdit)}>Edit</button>
             <button onClick={() => deletePerson(personDelete)}>Delete</button>
-            <button onClick={() => changeRate((personRate = person.rating) => (person.rating = personRate + 1)%10)}>Rate</button>
-            <p>{personRate}</p>
+            <button onClick={() => changeRate(person.rating = (person.rating + 1)%11)}>Rate</button>
+            {/* <button onClick={() => changeRate((personRate = person.rating) => (person.rating = personRate + 1)%10)}>Rate</button>
+            */}
+            <p>{personRate}</p> 
             </div>
           ))}
           
