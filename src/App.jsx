@@ -5,9 +5,15 @@ import Home from "./pages/Home.jsx";
 import Lab1 from "./pages/Lab1.jsx";
 import Lab2 from "./pages/Lab2.jsx";
 import Lab3 from "./pages/Lab3.jsx";
+import Lab4 from "./pages/Lab4.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import { useReducer } from "react";
+import AppReducer from "./data/AppReducer.js";
+import { data } from "./lab01/module-data.js";
+import AppContext from "./data/AppContext.js";
 
 function App() {
+  const [state, appDispatch] = useReducer(AppReducer, data);
   const menuItems = [
     {
       id: 1,
@@ -37,10 +43,18 @@ function App() {
       urlPattern: "/lab3",
       element: <Lab3></Lab3>,
     },
+    {
+      id: 5,
+      label: "Laboratorium 4",
+      url: "/lab4",
+      urlPattern: "/lab4",
+      element: <Lab4></Lab4>,
+    },
   ];
 
   return (
     <>
+    <AppContext.Provider value={{ items: state, dispatch: appDispatch}}>
       <RootLayout items={menuItems}>
         <Routes>
           {/* <Route path="/" element={<Home></Home>}></Route> */}
@@ -58,6 +72,7 @@ function App() {
               <p>content</p>
           </SimpleLayout> */}
       </RootLayout>
+      </AppContext.Provider>
     </>
   );
 }
