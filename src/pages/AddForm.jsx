@@ -79,7 +79,7 @@ function AddForm() {
           <FormControl
             required
             id={name}
-            type={name}
+            type="text"
             name={name}
             minLength="3"
             maxLength="50"
@@ -95,7 +95,7 @@ function AddForm() {
           <FormControl
             required
             id={age}
-            type={age}
+            type="number"
             name={age}
             // min="18"
             max="120"
@@ -111,7 +111,7 @@ function AddForm() {
           <FormControl
             required
             id={city}
-            type={city}
+            type="text"
             name={city}
             minLength="5"
             maxLength="50"

@@ -31,7 +31,6 @@ function EditFrom() {
     dispatch({ type: "edit", payload: data });
     navigate("/Lab3");
   };
-  //console.log(person);
 
   // const name = watch("name");
   // const age = watch("age");

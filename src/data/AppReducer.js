@@ -1,18 +1,16 @@
 export default function AppReducer(state, action) {
   switch (action.type) {
     case "add":
-      console.log(action.payload);
       return [...state, action.payload];
     case "edit":
       return state.map((person) => {
-        console.log(action.payload);
         if (person.id === action.payload.id) {
           return {
             ...person,
             name: action.payload.name,
             age: action.payload.age,
             city: action.payload.city,
-            rating: action.payload.rating,
+            rating: parseInt(action.payload.rating),
           };
         }
         return person;
