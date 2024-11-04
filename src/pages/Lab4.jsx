@@ -1,12 +1,12 @@
-// import { data } from "../lab01/module-data.js";
-// import FlexContainer from "../components/FlexContainer.jsx";
+import { Link } from "react-router-dom";
 
 
 function Lab4() {
 
   return (
     <>
-      {/* <FlexContainer key={data.id} element={data} ></FlexContainer> */}
+      <Link to="/lab4/add">Add New</Link>
+      
     </>
   );
 }

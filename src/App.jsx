@@ -11,6 +11,8 @@ import { useReducer } from "react";
 import AppReducer from "./data/AppReducer.js";
 import { data } from "./lab01/module-data.js";
 import AppContext from "./data/AppContext.js";
+import AddForm from "./pages/AddForm.jsx";
+import EditFrom from "./pages/EditForm.jsx";
 
 function App() {
   const [state, appDispatch] = useReducer(AppReducer, data);
@@ -50,6 +52,20 @@ function App() {
       urlPattern: "/lab4",
       element: <Lab4></Lab4>,
     },
+    {
+      id: 6,
+      label: "Add new",
+      url: "/lab4/add",
+      urlPattern: "/lab4/add",
+      element: <AddForm></AddForm>,
+    },
+    {
+      id: 7,
+      label: "Edit",
+      url: "/lab4/edit",
+      urlPattern: "/lab4/edit",
+      element: <EditFrom></EditFrom>,
+    },
   ];
 
   return (
@@ -57,15 +73,16 @@ function App() {
     <AppContext.Provider value={{ items: state, dispatch: appDispatch}}>
       <RootLayout items={menuItems}>
         <Routes>
-          {/* <Route path="/" element={<Home></Home>}></Route> */}
           {menuItems.map((item) => (
             <Route
               key={item.id}
               path={item.urlPattern}
               element={item.element}
             ></Route>
+            
           ))}
           <Route path="/*" element={<NotFound></NotFound>}></Route>
+          <Route path="/lab4/edit" element={<AddForm></AddForm>}></Route>
         </Routes>
 
         {/* <SimpleLayout>
