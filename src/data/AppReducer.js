@@ -5,8 +5,15 @@ export default function AppReducer(state, action) {
       return [...state, action.payload];
     case "edit":
       return state.map((person) => {
-        if (person.id === action.id) {
-          console.log("editing");
+        console.log(action.payload);
+        if (person.id === action.payload.id) {
+          return {
+            ...person,
+            name: action.payload.name,
+            age: action.payload.age,
+            city: action.payload.city,
+            rating: action.payload.rating,
+          };
         }
         return person;
       });

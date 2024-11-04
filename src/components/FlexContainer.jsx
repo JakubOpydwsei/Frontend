@@ -2,10 +2,12 @@
 import PersonProfile from "../components/PersonProfile.jsx";
 import { useContext } from "react";
 import AppContext from "../data/AppContext.js";
+import { useNavigate } from "react-router-dom";
 
 function FlexContainer() {
     const context = useContext(AppContext);
     const { items, dispatch } = context; // Pobierz items i dispatch z kontekstu
+    const navigate = useNavigate();
 
     return (
         <div className="app">
@@ -16,11 +18,7 @@ function FlexContainer() {
                         <PersonProfile person={person} />
                         <button
                             onClick={() => {
-                                dispatch({
-                                    type: "edit",
-                                    id: person.id,
-                                    newName: "Nowe Imię" // Przykład nowego imienia
-                                });
+                                navigate("/lab4/edit", { state: { person } }); // 
                             }}
                         >
                             Edit

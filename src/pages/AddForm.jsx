@@ -81,6 +81,7 @@ function AddForm() {
             id={name}
             type={name}
             name={name}
+            minLength="3"
             maxLength="50"
             className="text-lg"
             placeholder="Enter name"
@@ -97,7 +98,7 @@ function AddForm() {
             type={age}
             name={age}
             // min="18"
-            max="100"
+            max="120"
             className="text-lg"
             placeholder="Enter age"
           />
@@ -112,6 +113,7 @@ function AddForm() {
             id={city}
             type={city}
             name={city}
+            minLength="5"
             maxLength="50"
             className="text-lg"
             placeholder="Enter city"
