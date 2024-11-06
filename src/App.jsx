@@ -6,17 +6,19 @@ import Lab1 from "./pages/Lab1.jsx";
 import Lab2 from "./pages/Lab2.jsx";
 import Lab3 from "./pages/Lab3.jsx";
 import Lab4 from "./pages/Lab4.jsx";
-import NotFound from "./pages/NotFound.jsx";
-import { useReducer } from "react";
-import AppReducer from "./data/AppReducer.js";
-import { data } from "./lab01/module-data.js";
-import AppContext from "./data/AppContext.js";
 import AddForm from "./pages/AddForm.jsx";
 import EditFrom from "./pages/EditForm.jsx";
 import AppProvider from "./components/AppProvider.jsx";
+import Lab5Page from "./pages/Lab5Page.jsx";
+import NotFound from "./pages/NotFound.jsx";
+// import { useReducer } from "react";
+// import AppReducer from "./data/AppReducer.js";
+// import { data } from "./lab01/module-data.js";
+//import AppContext from "./data/AppContext.js";
+
 
 function App() {
-  const [state, appDispatch] = useReducer(AppReducer, data);
+  //const [state, appDispatch] = useReducer(AppReducer, data);
   const menuItems = [
     {
       id: 1,
@@ -55,13 +57,20 @@ function App() {
     },
     {
       id: 6,
-      label: "Add new",
+      label: "Laboratorium 5",
+      url: "/lab5",
+      urlPattern: "/lab5",
+      element: <Lab5Page></Lab5Page>,
+    },
+    {
+      id: 7,
+      label: "Add person",
       url: "/lab4/add",
       urlPattern: "/lab4/add",
       element: <AddForm></AddForm>,
     },
     {
-      id: 7,
+      id: 8,
       label: "Edit",
       url: "/lab4/edit",
       urlPattern: "/lab4/edit",
