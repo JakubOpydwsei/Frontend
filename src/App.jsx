@@ -13,6 +13,7 @@ import { data } from "./lab01/module-data.js";
 import AppContext from "./data/AppContext.js";
 import AddForm from "./pages/AddForm.jsx";
 import EditFrom from "./pages/EditForm.jsx";
+import AppProvider from "./components/AppProvider.jsx";
 
 function App() {
   const [state, appDispatch] = useReducer(AppReducer, data);
@@ -70,8 +71,8 @@ function App() {
 
   return (
     <>
-    <AppContext.Provider value={{ items: state, dispatch: appDispatch}}>
-      <RootLayout items={menuItems}>
+    <AppProvider>
+    <RootLayout items={menuItems}>
         <Routes>
           {menuItems.map((item) => (
             <Route
@@ -89,7 +90,11 @@ function App() {
               <p>content</p>
           </SimpleLayout> */}
       </RootLayout>
-      </AppContext.Provider>
+    </AppProvider>
+
+    {/* <AppContext.Provider value={{ items: state, dispatch: appDispatch}}>
+      
+      </AppContext.Provider> */}
     </>
   );
 }

@@ -1,12 +1,16 @@
 // FlexContainer.jsx
 import PersonProfile from "../components/PersonProfile.jsx";
-import { useContext } from "react";
-import AppContext from "../data/AppContext.js";
+// import { useContext } from "react";
+// import AppContext from "../data/AppContext.js";
 import { useNavigate } from "react-router-dom";
+import useData from "./useData.jsx";
+import useDispatch from "./useDispatch.jsx";
 
 function FlexContainer() {
-    const context = useContext(AppContext);
-    const { items, dispatch } = context; // Pobierz items i dispatch z kontekstu
+    //const context = useContext(AppContext);
+    const items = useData();
+    const dispatch = useDispatch() ;
+    //const { items, dispatch } = context; // Pobierz items i dispatch z kontekstu
     const navigate = useNavigate();
 
     return (
