@@ -21,45 +21,75 @@ function Lab5Page() {
     <>
       <h1>LAB5</h1>
 
-      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Sorting
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Ascending order</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Descending order</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item href="#/action-3">Natural order</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
-            <th>User</th>
-            <th>Post title</th>
-            <th>Number of comments</th>
+            <th>
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  Users
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">
+                    Ascending order
+                  </Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">
+                    Descending order
+                  </Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item href="#/action-3">Natural order</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </th>
+            <th>
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  Posts titles
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">
+                    Ascending order
+                  </Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">
+                    Descending order
+                  </Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item href="#/action-3">Natural order</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </th>
+            <th>
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  Numbers of comments
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">
+                    Ascending order
+                  </Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">
+                    Descending order
+                  </Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item href="#/action-3">Natural order</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            {/* mapa po tablicy - generowane kontetntu */}
-            {console.log(tableData)}
-            {tableData.map((e) => {
-                // console.log(e.user.username);
-                // console.log(e.post.title);
-                // console.log(e.comments.length);
-              <>
-                <td>{e.user.username}</td>
-                <td>{e.post.title}</td>
-                <td>{e.comments.length}</td>
-              </>;
-            })}
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-          </tr>
+          {/* mapa po tablicy - generowane kontetntu */}
+          {console.log(tableData)}
+          {tableData.map((e) => (
+            <tr key={e.post.id}>
+              <td>{e.user?.username || "Unknown User"}</td>
+              <td>{e.post.title}</td>
+              <td>{e.comments.length}</td>
+            </tr>
+          ))}
         </tbody>
       </Table>
     </>
