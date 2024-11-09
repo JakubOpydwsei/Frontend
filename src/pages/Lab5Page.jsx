@@ -20,7 +20,7 @@ function Lab5Page() {
 
   const [tableData, dispatch] = useReducer(TableDataReducer, tableDatainit);
 
-  console.log(tableDatainit)
+  console.log(tableDatainit);
   // console.log(tableData)
 
   if (!tableDatainit.length) {
@@ -37,20 +37,20 @@ function Lab5Page() {
             {tableDatainit.map((e) => (
               <tr key={e.post.id}>
                 <td>
-                  <a href={`/lab5/user/${e.user?.id}`}>
+                  <a href={`/lab5/users/${e.user?.id}`}>
                     {e.user?.username || "Unknown User"}
                   </a>
                 </td>
                 <td>
                   <Accordion defaultActiveKey="0" style={{ width: "700px" }}>
                     <Accordion.Item eventKey="1">
-                      <Accordion.Header >{e.post?.title}</Accordion.Header>
+                      <Accordion.Header>{e.post?.title}</Accordion.Header>
                       <Accordion.Body>{e.post?.body}</Accordion.Body>
                     </Accordion.Item>
                   </Accordion>
                 </td>
                 <td>
-                  <a href={``}>
+                  <a href={`/lab5/posts/${e.post?.id}/comments`}>
                     {e.comments?.length || "Unknown comments number"}
                   </a>
                 </td>

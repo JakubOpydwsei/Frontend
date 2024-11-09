@@ -12,6 +12,8 @@ import AppProvider from "./components/AppProvider.jsx";
 import Lab5Page from "./pages/Lab5Page.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import User from "./pages/user.jsx";
+import Post from "./pages/Post.jsx";
+
 // import { useReducer } from "react";
 // import AppReducer from "./data/AppReducer.js";
 // import { data } from "./lab01/module-data.js";
@@ -87,7 +89,8 @@ function App() {
           ))}
           <Route path="/*" element={<NotFound></NotFound>}></Route>
           <Route path="/lab4/edit" element={<EditFrom></EditFrom>}></Route>
-          <Route path="/lab5/user/:id" element={<User></User>}></Route>
+          <Route path="/lab5/users/:id" element={<User></User>}></Route>
+          <Route path="/lab5/posts/:id/comments" element={<Post></Post>}></Route>
         </Routes>
 
         {/* <SimpleLayout>
