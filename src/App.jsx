@@ -11,6 +11,7 @@ import EditFrom from "./pages/EditForm.jsx";
 import AppProvider from "./components/AppProvider.jsx";
 import Lab5Page from "./pages/Lab5Page.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import User from "./pages/user.jsx";
 // import { useReducer } from "react";
 // import AppReducer from "./data/AppReducer.js";
 // import { data } from "./lab01/module-data.js";
@@ -69,13 +70,6 @@ function App() {
       urlPattern: "/lab4/add",
       element: <AddForm></AddForm>,
     },
-    {
-      id: 8,
-      label: "Edit",
-      url: "/lab4/edit",
-      urlPattern: "/lab4/edit",
-      element: <EditFrom></EditFrom>,
-    },
   ];
 
   return (
@@ -92,7 +86,8 @@ function App() {
             
           ))}
           <Route path="/*" element={<NotFound></NotFound>}></Route>
-          <Route path="/lab4/edit" element={<AddForm></AddForm>}></Route>
+          <Route path="/lab4/edit" element={<EditFrom></EditFrom>}></Route>
+          <Route path="/lab5/user/:id" element={<User></User>}></Route>
         </Routes>
 
         {/* <SimpleLayout>
