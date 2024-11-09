@@ -3,12 +3,12 @@ import TableHeader from "../components/TableHeader";
 import Table from "react-bootstrap/Table";
 import TableDataReducer from "../data/TableDataReducer";
 import { useReducer } from "react";
+import Accordion from "react-bootstrap/Accordion";
 
 function Lab5Page() {
   const [posts] = useFetch("https://jsonplaceholder.typicode.com/posts");
   const [users] = useFetch("https://jsonplaceholder.typicode.com/users");
   const [comments] = useFetch("https://jsonplaceholder.typicode.com/comments");
-
 
   const tableDatainit = posts.map((p) => {
     return {
@@ -20,9 +20,9 @@ function Lab5Page() {
 
   const [tableData, dispatch] = useReducer(TableDataReducer, tableDatainit);
 
-  // console.log(tableDatainit)
+  console.log(tableDatainit)
   // console.log(tableData)
-  
+
   if (!tableDatainit.length) {
     return <div>Fetching data...</div>;
   }
@@ -36,9 +36,24 @@ function Lab5Page() {
           <tbody>
             {tableDatainit.map((e) => (
               <tr key={e.post.id}>
-                <td><a href={`/lab5/user/${e.user?.id}`}>{e.user?.username || "Unknown User"}</a></td>
-                <td><a href={``}>{e.post?.title || "Unknown Title"}</a></td>
-                <td><a href={``}>{e.comments?.length || "Unknown comments number"}</a></td>
+                <td>
+                  <a href={`/lab5/user/${e.user?.id}`}>
+                    {e.user?.username || "Unknown User"}
+                  </a>
+                </td>
+                <td>
+                  <Accordion defaultActiveKey="0" style={{ width: "700px" }}>
+                    <Accordion.Item eventKey="1">
+                      <Accordion.Header >{e.post?.title}</Accordion.Header>
+                      <Accordion.Body>{e.post?.body}</Accordion.Body>
+                    </Accordion.Item>
+                  </Accordion>
+                </td>
+                <td>
+                  <a href={``}>
+                    {e.comments?.length || "Unknown comments number"}
+                  </a>
+                </td>
               </tr>
             ))}
           </tbody>
