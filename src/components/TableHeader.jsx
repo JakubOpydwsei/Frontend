@@ -27,7 +27,11 @@ function TableHeader({ dispatch }) {
                   Descending order
                 </Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item href="#/action-3">Natural order</Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => window.location.reload()}
+                >
+                  Natural order
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </th>
@@ -53,7 +57,11 @@ function TableHeader({ dispatch }) {
                   Descending order
                 </Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item href="#/action-3">Natural order</Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => window.location.reload()}
+                >
+                  Natural order
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </th>
@@ -79,7 +87,11 @@ function TableHeader({ dispatch }) {
                   Descending order
                 </Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item href="#/action-3">Natural order</Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => window.location.reload()}
+                >
+                  Natural order
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </th>
