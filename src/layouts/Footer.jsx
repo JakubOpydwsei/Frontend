@@ -1,8 +1,17 @@
+import "../styles/Footer.css";
 function Footer() {
   return (
     <>
-        <img src="../../../src/assets/wsei-logo.png" alt="WSEI Logo" width={'100px'} />{" "}
-        jakub.opyd@microsoft.wsei.edu.pl
+      <footer className="footer">
+        <div className="footer-content">
+          <img
+            src="/src/assets/wsei-logo.png"
+            alt="WSEI Logo"
+            className="footer-logo"
+          />
+          <span className="footer-email">jakub.opyd@microsoft.wsei.edu.pl</span>
+        </div>
+      </footer>
     </>
   );
 }

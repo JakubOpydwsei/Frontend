@@ -1,6 +1,5 @@
-//import React from 'react';
 import RatingBar from "./RatingBar";
-
+import "../styles/Person.css"
 const PersonProfile = ({ person }) => {
   return (
     <div className="person-card" style={{border: "1px solid black", padding: "3rem"}}>

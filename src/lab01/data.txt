@@ -10,7 +10,7 @@ Alice Brown
 45
 Chicago
 
-Michael Johnson
+Michael Deb
 40
 Houston
 
@@ -39,7 +39,7 @@ Johny Joestar
 Amsterdam
 
 Joshikata Joske
-16
+19
 Morioch
 
 Michał Sroka

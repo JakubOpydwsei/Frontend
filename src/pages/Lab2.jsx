@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { data } from "../lab01/module-data.js";
-import PersonProfile from "../components/PersonProfile.jsx";
+import PersonProfile from '../components/PersonProfile.jsx';
 
 function Lab2() {
   const { id } = useParams();

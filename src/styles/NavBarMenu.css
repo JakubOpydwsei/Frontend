@@ -1,0 +1,30 @@
+.navbar-dark {
+  background-color: #343a40;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #f8f9fa;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+  color: #ffffff;
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  color: #adb5bd;
+}
+
+.nav-link:hover {
+  text-shadow: 0px 0px 3px #ffffff;
+  transition: 0.2s;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.nav-link + .nav-link {
+  margin-left: 1rem;
+}
